@@ -1,3 +1,71 @@
 body {
-    background-color: hsl(0, 0%, 92%);
+    background-color: hsl(0, 0%, 90%);
+}
+
+.container {
+    max-width: calc(1024px - 2em);
+}
+.card {
+    box-shadow: 0 0 2px hsl(0deg 0% 0% / 10%), 0 1px 2px hsl(0deg 0% 0% / 20%);
+    border: none;
+}
+
+:is(
+    input[type=text],
+    textarea
+)::placeholder {
+    color: hsl(208deg 7% 46% / 50%);
+}
+
+#window {
+    height: 510px;
+}
+
+#users.list-group-flush {
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+}
+#users.list-group-flush > .list-group-item:last-child {
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    border-radius: 0;
+    margin-bottom: 2em;
+}
+
+#history {
+    background-color: hsl(0, 0%, 0%, 0.03);
+    height: 25em;
+    padding: 1em;
+    overflow: auto;
+    box-shadow: inset 0 1px 2px hsl(0deg 0% 0% / 5%);
+    border: 1px solid hsl(0, 0%, 90%);
+    border-radius: 0.25em;
+}
+
+.entry {
+    background-color: white;
+    padding: 0.5em 0.8em;
+    max-width: 25em;
+    width: fit-content;
+    border-radius: 0.5em;
+    box-shadow: 0 1px 2px hsl(0deg 0% 0% / 20%);
+}
+.entry + .entry {
+    margin-top: 0.5em;
+}
+.entry.self {
+    margin-right: 0;
+    margin-left: auto;
+}
+.from {
+    font-size: 0.8em;
+    color: hsl(0, 0%, 0%, 0.4);
+    display: flex;
+    gap: 0.5em;
+}
+.time {
+    color: hsl(0, 0%, 0%, 0.3);
+}
+#message {
+    height: calc((1.5em * 3) + 0.75rem + 2px);
+    resize: none;
 }

@@ -4,14 +4,86 @@
     <meta charset="utf-8">
     <title>Node.js Chat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/styles.css">
     <link rel="stylesheet" href="assets/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
     <script src="assets/jquery-3.6.0.min.js"></script>
     <script src="assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 
-<p>Hey</p>
+<div class="container mt-3 mb-3">
+    
+    <div class="card">
+        
+        <div class="card-body">
+            
+            <div class="row" id="window">
+                
+                <div class="col-3 h-100 d-flex flex-column">
+                    <input type="text" class="form-control" id="user" placeholder="Name" />
+                    <ul class="list-group list-group-flush h-100 mt-3 overflow-auto" id="users">
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                        <li class="list-group-item">A fourth item</li>
+                        <li class="list-group-item">And a fifth one</li>
+                    </ul>
+                </div>
+                
+                <div class="col">
+                    
+                    <div id="history">
+                        <div class="entry">
+                            <div class="from">
+                                <div class="user">John</div>
+                                ·
+                                <div class="time">12:33</div>
+                            </div>
+                            <div class="message">Hey</div>
+                        </div>
+                        <div class="entry">
+                            <div class="from">
+                                <div class="user">Jane</div>
+                                ·
+                                <div class="time">12:33</div>
+                            </div>
+                            <div class="message">Hey, John</div>
+                        </div>
+                        <div class="entry self">
+                            <div class="from">
+                                <div class="user">Me</div>
+                                ∙
+                                <div class="time">12:33</div>
+                            </div>
+                            <div class="message">Hey, guys</div>
+                        </div>
+                        <div class="entry self">
+                            <div class="from">
+                                <div class="user">Me</div>
+                                ∙
+                                <div class="time">12:33</div>
+                            </div>
+                            <div class="message">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-3">
+                        <div class="col">
+                            <textarea class="form-control" id="message" placeholder="Message"></textarea>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" id="sendMessageButton" class="btn btn-primary">Send</button>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
 
 </body>
 </html>
