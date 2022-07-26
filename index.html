@@ -17,9 +17,9 @@
         
         <div class="card-body">
             
-            <div class="row" id="window">
+            <div class="row g-0" id="window">
                 
-                <div class="col-3 h-100 d-flex flex-column">
+                <div class="col-3 h-100 d-flex flex-column me-3">
                     <input type="text" class="form-control" id="user" placeholder="Name" />
                     <ul class="list-group list-group-flush h-100 mt-3 overflow-auto" id="users">
                         <li class="list-group-item">A second item</li>
@@ -29,9 +29,9 @@
                     </ul>
                 </div>
                 
-                <div class="col">
+                <div class="col d-flex flex-column">
                     
-                    <div id="history">
+                    <div id="history" class="flex-grow-1">
                         <div class="entry">
                             <div class="from">
                                 <div class="user">John</div>
@@ -66,12 +66,12 @@
                         </div>
                     </div>
                     
-                    <div class="row mt-3">
+                    <div class="row g-0 mt-3">
                         <div class="col">
                             <textarea class="form-control" id="message" placeholder="Message"></textarea>
                         </div>
-                        <div class="col-auto">
-                            <button type="button" id="sendMessageButton" class="btn btn-primary">Send</button>
+                        <div class="col-auto ms-3">
+                            <button type="button" id="sendMessageButton" class="btn btn-secondary h-100">Send</button>
                         </div>
                     </div>
                     

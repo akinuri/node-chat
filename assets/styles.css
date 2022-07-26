@@ -8,6 +8,7 @@ body {
 .card {
     box-shadow: 0 0 2px hsl(0deg 0% 0% / 10%), 0 1px 2px hsl(0deg 0% 0% / 20%);
     border: none;
+    background-color: hsl(0, 0%, 99%);
 }
 
 :is(
@@ -24,16 +25,20 @@ body {
 #users.list-group-flush {
     border: 1px solid rgba(0,0,0,.125);
     border-radius: 0.25rem;
+    box-shadow: inset 0 1px 2px hsl(0deg 0% 0% / 5%);
+    background-color: hsl(0, 0%, 0%, 0.03);
 }
 #users.list-group-flush > .list-group-item:last-child {
-    border-bottom: 1px solid rgba(0,0,0,.125);
     border-radius: 0;
-    margin-bottom: 2em;
+    box-shadow: 0 1px 0 rgba(0,0,0,.125)
+}
+#users .list-group-item {
+    background-color: hsla(0, 0%, 100%, 0.4);
+    color: hsl(210deg 11% 15% / 80%);
 }
 
 #history {
     background-color: hsl(0, 0%, 0%, 0.03);
-    height: 25em;
     padding: 1em;
     overflow: auto;
     box-shadow: inset 0 1px 2px hsl(0deg 0% 0% / 5%);
