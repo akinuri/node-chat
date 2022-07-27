@@ -70,7 +70,7 @@ body {
 .time {
     color: hsl(0, 0%, 0%, 0.3);
 }
-#message {
+#messageBox {
     height: calc((1.5em * 3) + 0.75rem + 2px);
     resize: none;
 }
