@@ -19,5 +19,17 @@ $("#messageBox").on("keydown", (e) => {
 });
 
 $(document).ready(() => {
+    
     $("#history").css("height", $("#history").css("height"));
+    
+    getMessages(() => {
+        writeMessage({
+            from : {
+                user : "Me",
+                time : getCurrentTime(),
+            },
+            message : "Lorem ipsum may be used as a placeholder before final copy is available.",
+        }, true);
+    });
+    
 });

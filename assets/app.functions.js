@@ -89,3 +89,12 @@ function receiveUser() {
     let user = createUser("Michael");
     writeUser(user);
 }
+
+function getMessages(afterCallback = null) {
+    $.get(document.baseURI + "messages", (data) => {
+        for (let message of data) {
+            writeMessage(message);
+        }
+        afterCallback && afterCallback();
+    });
+}
