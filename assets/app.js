@@ -1,6 +1,7 @@
 function initSendMessage() {
     let message = collectMessage();
     let entry = writeMessage(message, true);
+    $("#messageBox").val("");
     // sendMessage(message, (isSent) => {
     //     if (!isSent) {
     //         entry.remove();

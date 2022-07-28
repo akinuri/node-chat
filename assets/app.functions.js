@@ -74,10 +74,6 @@ function receiveMessage() {
     writeMessage(message);
 }
 
-function receiveUser() {
-    return "Michael";
-}
-
 function createUser(user) {
     let li = document.createElement("li");
     li.className = "list-group-item pulse";
@@ -85,7 +81,11 @@ function createUser(user) {
     return li;
 }
 
-function writeUser() {
-    let user = createUser(receiveUser());
+function writeUser(user) {
     $("#users").prepend(user);
+}
+
+function receiveUser() {
+    let user = createUser("Michael");
+    writeUser(user);
 }
