@@ -2,11 +2,10 @@ function initSendMessage() {
     let message = collectMessage();
     let entry = writeMessage(message, true);
     $("#messageBox").val("");
-    // sendMessage(message, (isSent) => {
-    //     if (!isSent) {
-    //         entry.remove();
-    //     }
-    // });
+    sendMessage(message, () => {
+        console.error("The last message could not be sent.");
+        entry.remove();
+    });
 }
 
 $("#sendMessageButton").on("click", initSendMessage);

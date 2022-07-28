@@ -56,10 +56,19 @@ function isScrolledToBottom(el) {
     return el.scrollTop + el.clientHeight > el.scrollHeight - (el.clientHeight / 2);
 }
 
-function sendMessage() {
-    let isSent = false;
-    // TODO: ??
-    return isSent;
+function sendMessage(message, failCallback = null) {
+    if (message.from.user && message.message) {
+        $.ajax({
+            url: document.baseURI + "messages",
+            type: "POST",
+            data: JSON.stringify(message),
+            contentType: 'application/json; charset=utf-8',
+            error: function (msg) {
+                console.log(msg);
+                failCallback && failCallback();
+            },
+        });
+    }
 }
 
 // lets test the scroll on message receive
