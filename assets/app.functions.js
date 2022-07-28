@@ -62,7 +62,7 @@ function sendMessage() {
     return isSent;
 }
 
-// fake; lets test the scroll on message receive
+// lets test the scroll on message receive
 function receiveMessage() {
     let message = {
         from : {
@@ -72,4 +72,20 @@ function receiveMessage() {
         message : "Just do it!",
     };
     writeMessage(message);
+}
+
+function receiveUser() {
+    return "Michael";
+}
+
+function createUser(user) {
+    let li = document.createElement("li");
+    li.className = "list-group-item pulse";
+    li.textContent = user;
+    return li;
+}
+
+function writeUser() {
+    let user = createUser(receiveUser());
+    $("#users").prepend(user);
 }

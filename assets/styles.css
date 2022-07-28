@@ -74,3 +74,22 @@ body {
     height: calc((1.5em * 3) + 0.75rem + 2px);
     resize: none;
 }
+
+
+@keyframes pulse {
+    from {
+        background-color: hsla(0, 0%, 100%, 0.4);
+    }
+    50% {
+        background-color: hsla(0, 25%, 65%, 0.3);
+    }
+    to {
+        background-color: hsla(0, 0%, 100%, 0.4);
+    }
+}
+.pulse {
+    animation-name: pulse;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
