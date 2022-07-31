@@ -21,14 +21,11 @@ $(document).ready(() => {
     
     $("#history").css("height", $("#history").css("height"));
     
-    getMessages(() => {
-        writeMessage({
-            from : {
-                user : "Me",
-                time : getCurrentTime(),
-            },
-            message : "Lorem ipsum may be used as a placeholder before final copy is available.",
-        }, true);
-    });
+    getMessages();
+    
+    setInterval(() => {
+        let lastMessageId = $("#history .entry:last-child").data("id");
+        getMessages(lastMessageId);
+    }, 1000);
     
 });

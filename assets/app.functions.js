@@ -9,6 +9,7 @@ function getCurrentTime() {
 
 function collectMessage() {
     let message = {
+        id: generateRandomString(),
         from : {
             user : $("#user").val(),
             time : getCurrentTime(),
@@ -35,6 +36,7 @@ function createChatEntry(message, isSelf = false) {
     if (isSelf) {
         entry.classList.add("self");
     }
+    entry.dataset.id = message.id;
     return entry;
 }
 
@@ -99,11 +101,24 @@ function receiveUser() {
     writeUser(user);
 }
 
-function getMessages(afterCallback = null) {
-    $.get(document.baseURI + "messages", (data) => {
+function getMessages(afterId = null, callback = null) {
+    let url = document.baseURI + "messages";
+    if (afterId) {
+        url += "?after=" + afterId;
+    }
+    $.get(url, (data) => {
         for (let message of data) {
             writeMessage(message);
         }
-        afterCallback && afterCallback();
+        callback && callback();
     });
+}
+
+function generateRandomString(length = 8) {
+    let randomStr = parseInt(Math.random().toString().slice(2)).toString(36);
+    while (randomStr.length < length) {
+        randomStr += String.random();
+    }
+    randomStr = randomStr.slice(-length);
+    return randomStr;
 }
